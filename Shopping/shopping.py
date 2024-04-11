@@ -11,7 +11,11 @@ class MemberCard:
         pass
 
     def calculate_point():
-        pass
+        if price >=25
+        return point+1
+        else:
+        return None
+        
 
 
 class PlatinumCard:
