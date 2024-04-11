@@ -1,0 +1,85 @@
+class DigitalWallet:
+  """A class representing a digital wallet for storing and managing funds."""
+
+  def __init__(self, ewallet_no, cid, cname, balance=0.0):
+    """
+    Initializes a DigitalWallet object.
+
+    Args:
+        ewallet_no (str): The e-wallet number (e.g., 123-456).
+        cid (str): The customer's ID number (e.g., 1-1234-45678-01-2).
+        cname (str): The customer's name (e.g., Bobby Parker).
+        balance (float, optional): The initial balance in the wallet. Defaults to 0.0.
+    """
+
+    self.ewallet_no = ewallet_no
+    self.cid = cid
+    self.cname = cname
+    self.balance = balance
+
+  def deposit(self, amount):
+    """Deposits money into the digital wallet.
+
+    Args:
+        amount (float): The amount of money to deposit (must be at least 100 baht).
+
+    Returns:
+        str: A message indicating the deposit status.
+    """
+
+    MIN_DEPOSIT_AMOUNT = 100.0
+
+    if amount >= MIN_DEPOSIT_AMOUNT:
+      self.balance += amount
+      message = f"Successfully deposited {amount:.2f} baht. New balance is {self.balance:.2f} baht."
+    else:
+      message = f"Deposit amount must be at least {MIN_DEPOSIT_AMOUNT:.2f} baht."
+
+    return message
+
+  def withdraw(self, amount):
+    """Withdraws money from the digital wallet.
+
+    Args:
+        amount (float): The amount of money to withdraw (must be greater than 0 and less than the balance).
+
+    Returns:
+        str: A message indicating the withdrawal status and the new balance, or an error message if the withdrawal fails.
+    """
+
+  if amount > 0 and amount < self.balance:
+    self.balance -= amount
+    return f"Withdrawal successful. Amount withdrawn: {amount:.2f} baht. New balance: {self.balance:.2f} baht."
+  else:
+    return "Insufficient balance for withdrawal."
+
+  def change_name(self, new_name):
+    """Changes the customer's name associated with the digital wallet.
+
+    Args:
+        new_name (str): The new name for the customer.
+
+    Returns:
+        str: A message indicating the name change status.
+    """
+
+    self.cname = new_name
+    return f"Customer name successfully changed to {new_name}."
+
+# Example usage
+wallet = DigitalWallet("123-456", "1-1234-45678-01-2", "Bobby Parker", 100.0)
+
+# Simulate deposit
+deposit_amount = float(input("Enter amount to deposit: "))
+message = wallet.deposit(deposit_amount)
+print(message)
+
+# Simulate name change
+new_name = input("Enter new customer name: ")
+message = wallet.change_name(new_name)
+print(message)
+
+# Simulate withdrawal
+withdraw_amount = float(input("Enter amount to withdraw: "))
+message = wallet.withdraw(withdraw_amount)
+print(message)
