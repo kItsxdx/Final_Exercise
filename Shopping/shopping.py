@@ -1,5 +1,5 @@
 class Item:
-    def __init__(self, item: str, price: float):
+    def __init__(self, item, price):
         self.item = item
         self.price = price
 
@@ -100,3 +100,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+"""คำอธิบาย
+โปรแกรมนี้ประกอบด้วยคลาส 3 คลาส ดังนี้
+
+*คลาส Item: คลาสนี้ใช้สำหรับจัดเก็บข้อมูลสินค้า มีแอตทริบิวต์ 2 รายการ ได้แก่ item (ชื่อสินค้า) และ price (ราคาสินค้า)
+*คลาส MemberCard: คลาสนี้ใช้สำหรับจัดเก็บข้อมูลเกี่ยวกับบัตรส
+"""
