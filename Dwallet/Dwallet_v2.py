@@ -14,7 +14,7 @@ class DigitalWallet_v2:
             self.balance += amount
             message = f'ฝากเงินสำเร็จ {amount:.2f} bath. ยอดเงินคงเหลือ {self.balance:.2f}bath.'
         else:
-            message = f"Deposit amount must be at least {min:.2f} baht."
+            message = f"ฝากขั้นต้ำ 100 บาท"
         return message
 # methods การถอนเงิน
 
