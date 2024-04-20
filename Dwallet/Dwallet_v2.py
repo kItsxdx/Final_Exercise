@@ -32,7 +32,7 @@ class DigitalWallet_v2:
 
 
 # ตัวอย่างการใช้งาน
-wallet = DigitalWallet_v2('123-456', '1-11-2345-99', 'ไอ้สัสยุท', 1000)
+wallet = DigitalWallet_v2('123-456', '1-11-2345-99', 'สมชาย', 1000)
 
 # ตัวอย่างการฝากเงิน
 deposit_amount = float(input('กรอกจำนวนเงินที่ฝาก:'))
