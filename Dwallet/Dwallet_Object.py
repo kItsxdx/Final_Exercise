@@ -1,5 +1,6 @@
-# Object of Dwallet.py
-from Dwallet import DigitalWallet
+#Object of Dwallet_v2
+from Dwallet_v2 import DigitalWallet_v2
 
-cus1 = DigitalWallet(9999999, 77777777, 'GOD', 999999)
-cus1.check_balance
+if __name__=='__main__':
+    cus1 = DigitalWallet_v2(9999999, 77777777, 'GOD', 999999)
+    print(f'####################################')
