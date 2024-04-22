@@ -36,11 +36,19 @@ class Enemy:
             print(f"{self.name} attacks you!")
             self.take_damage(wdamage)
 
+    def take_damage(self, damage:int):
+        self.health -= damage
+        if self.health <= 0:
+            print(f"{self.name} take damage Fucking DEAD  heath: {self.health}")
+
+
 
     def print_detail(self):
+
+        print(f'                                          ')
         print(f'====== Monster ({self.name})Detail =========')
         print(f'Health:{self.health}')
         print(f'Speech:{self.speech}')
-        print(f'{self.name} raise his and says...')
-        print(f'"We are friend now"')
-        print(f'{self.name} give you Toy Bat')
+        print(f'{self.name} will {self.fight_dialogue}')
+        print(f'                                          ')
+

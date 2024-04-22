@@ -1,6 +1,6 @@
 #66111375 กฤษดา ขันตรี
 class Monster:
-    def __init__(self, name, health, speech):
+    def __init__(self, name, health:int, speech):
         self.name = name
         self.health = health
         self.speech = speech
@@ -23,12 +23,16 @@ class Monster:
     def get_speech(self):
         return self.speech
 
-    def take_damage(self, damage):
+    def take_damage(self, damage:int):
         self.health -= damage
-        if self.health <= 0:
-            print(f"{self.name} has been defeated!")
+        if self.health >= 0:
+            print(f"{self.name} has been defeated! heath: {self.health}")
 
     def show_detail(self):
+
+        print(f'                                          ')
+        print(f'====== Monster ({self.name})Detail =========')
         print(f"Name: {self.name}")
         print(f"Health: {self.health}")
         print(f"Speech: {self.speech}")
+        print(f'                                          ')

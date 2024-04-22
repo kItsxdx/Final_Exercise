@@ -31,9 +31,12 @@ class Friend:
         print(f"{self.name} gives you {self.gift}")
 
     def print_detail(self):
-        print(f'====== Monster ({self.name})Detail =========')
+        print(f'                                          ')
+        print(f'====== Friend ({self.name})Detail =========')
         print(f'Health:{self.highfive_dialogue}')
         print(f'Speech:{self.gift}')
         print(f'{self.name} raise his and says...')
         print(f'"We are friend now"')
         print(f'{self.name} give you Toy Bat')
+        print(f'-------------------------------------------------')
+        print(f'                                          ')
