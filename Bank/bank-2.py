@@ -1,3 +1,16 @@
+#bank.py
+from abc import ABC, abstractmethod
+#Abstract Class
+class Bank(ABC):
+    #Flat Rate
+    def __init__(self,bankname:str) -> None:
+        super().__init__()
+        self.bankname = bankname
+
+    @abstractmethod #Abstarct Method
+    def flat_rate(self):
+       pass
+----------------------------------------------
 from bank import Bank
 class DpuBank(Bank):
     def __init__(self, bankname) -> None:
