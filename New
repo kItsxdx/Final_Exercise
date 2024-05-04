@@ -1,0 +1,54 @@
+from math import floor
+class Shop:
+    def __init__(self,item:str,price:float) -> None:
+        self.item = item
+        self.price = price
+
+    
+class MemberCard:
+    def __init__(self) -> None:
+        self.ctype = 'MemberCard'
+        self.cart = []
+        self.point = 0
+
+    def add_item(self,item:Shop):
+        self.cart.append(item)
+
+    def calculate_point(self):
+        Total_price = 0
+        for product in self.cart:
+            Total_price = Total_price + product.price
+        self.point= floor(self.point +(Total_price / 40))
+        print(f'------- MemberCard -------')
+        print(f'Total today : {Total_price:,.2f} bath')
+        print(f'Point today : {self.point:,.2f} point')
+
+class PlatinumCard(MemberCard):
+        def __init__(self) -> None:
+             super().__init__()
+             self.cytyp = 'PlatinumCard'
+    
+
+
+        def calculate_point(self):
+            total_price = 0
+            for product in self.cart:
+                total_price  = total_price + product.price
+            self.point = floor(self.point+(total_price / 25))
+            print(f'-------- PlatinumCard ---------')
+            print(f'Total today: {total_price:,.2f} bath')
+            print(f'Point Today: {self.point:,.2f} point')
+
+
+if __name__=='__main__':
+    test = MemberCard()
+    test.add_item(Shop('à¸à¸¡',45))
+    test.add_item(Shop('à¸à¸à¸¡à¸à¸±à¸',23))
+    test.add_item(Shop('à¹à¸à¸¢à¸à¸±à¹à¸§',70))
+    test.calculate_point()
+
+    test_2 = PlatinumCard()
+    test_2.add_item(Shop('à¸à¸´à¸à¸à¹à¸²',200))
+    test_2.add_item(Shop('à¸à¹à¸³à¸­à¸±à¸à¸¥à¸¡',35))
+    test_2.add_item(Shop('à¸¡à¸±à¸à¸à¸£à¸±à¹à¸à¸à¸­à¸',60))
+    test_2.calculate_point()
